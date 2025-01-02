@@ -18,7 +18,7 @@ class ChatMessage {
   factory ChatMessage.fromJson(Map<String, dynamic> jsonData) {
     return ChatMessage(
       user: ChatUser.fromJson(jsonData['user'] as Map<String, dynamic>),
-      messageId: jsonData['messageId'],
+      messageId: jsonData['messageId']?.toString() ?? '',
       createdAt: DateTime.parse(jsonData['createdAt'].toString()).toLocal(),
       text: jsonData['text']?.toString() ?? '',
       isMarkdown: jsonData['isMarkdown']?.toString() == 'true',
