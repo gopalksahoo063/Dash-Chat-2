@@ -22,7 +22,7 @@ InputDecoration defaultInputDecoration({
         
         borderSide: const BorderSide(
           width: 0,
-          style: BorderStyle.solid,
+          // style: BorderStyle.solid,
           // color: Color(0xFF979C9E),
           color: Colors.red,
         ),
