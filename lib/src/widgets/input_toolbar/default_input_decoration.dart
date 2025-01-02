@@ -11,7 +11,7 @@ InputDecoration defaultInputDecoration({
       hintText: hintText,
       hintStyle: hintStyle,
       filled: true,
-      fillColor: fillColor ?? Colors.grey[100],
+      fillColor: fillColor ?? Colors.white,
       contentPadding: const EdgeInsets.only(
         left: 18,
         top: 10,
