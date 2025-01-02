@@ -1,5 +1,4 @@
 part of '../../dash_chat_2.dart';
-
 /// {@category Models}
 class ChatMessage {
   ChatMessage({
@@ -13,12 +12,13 @@ class ChatMessage {
     this.mentions,
     this.status = MessageStatus.none,
     this.replyTo,
+    this.messageId = '',
   });
-
   /// Create a ChatMessage instance from json data
   factory ChatMessage.fromJson(Map<String, dynamic> jsonData) {
     return ChatMessage(
       user: ChatUser.fromJson(jsonData['user'] as Map<String, dynamic>),
+      messageId: jsonData['messageId'],
       createdAt: DateTime.parse(jsonData['createdAt'].toString()).toLocal(),
       text: jsonData['text']?.toString() ?? '',
       isMarkdown: jsonData['isMarkdown']?.toString() == 'true',
@@ -47,39 +47,30 @@ class ChatMessage {
           : null,
     );
   }
-
   /// If the message is Markdown formatted then it will be converted to Markdown (by default it will be false)
   bool isMarkdown;
-
   /// Text of the message (optional because you can also just send a media)
   String text;
-
   /// Author of the message
   ChatUser user;
-
   /// List of medias of the message
   List<ChatMedia>? medias;
-
   /// A list of quick replies that users can use to reply to this message
   List<QuickReply>? quickReplies;
-
   /// A list of custom properties to extend the existing ones
   /// in case you need to store more things.
   /// Can be useful to extend existing features
   Map<String, dynamic>? customProperties;
-
   /// Date of the message
   DateTime createdAt;
-
   /// Mentioned elements in the message
   List<Mention>? mentions;
-
   /// Status of the message TODO:
   MessageStatus? status;
-
   /// If the message is a reply of another one TODO:
   ChatMessage? replyTo;
-
+// This is created by Ovesh
+  String? messageId;
   /// Convert a ChatMessage into a json
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
@@ -95,17 +86,15 @@ class ChatMessage {
       'status': status.toString(),
       'replyTo': replyTo?.toJson(),
       'isMarkdown': isMarkdown,
+      'messageId': messageId,
     };
   }
 }
-
 class MessageStatus {
   const MessageStatus._internal(this._value);
   final String _value;
-
   @override
   String toString() => _value;
-
   static MessageStatus parse(String value) {
     switch (value) {
       case 'none':
@@ -124,7 +113,6 @@ class MessageStatus {
         return MessageStatus.none;
     }
   }
-
   static const MessageStatus none = MessageStatus._internal('none');
   static const MessageStatus failed = MessageStatus._internal('failed');
   static const MessageStatus sent = MessageStatus._internal('sent');
