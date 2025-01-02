@@ -2,7 +2,7 @@ part of '../../../dash_chat_2.dart';
 
 /// {@category Default widgets}
 InputDecoration defaultInputDecoration({
-  String hintText = 'Write a message...',
+  String hintText = 'Type a message...',
   TextStyle hintStyle = const TextStyle(color: Colors.grey),
   Color? fillColor,
 }) =>
