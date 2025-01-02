@@ -19,12 +19,10 @@ InputDecoration defaultInputDecoration({
       ),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
-        
         borderSide: const BorderSide(
           width: 0,
-          // style: BorderStyle.solid,
-          // color: Color(0xFF979C9E),
-          color: Colors.red,
+          style: BorderStyle.solid,
+          color: Color(0xFF979C9E),
         ),
       ),
     );
