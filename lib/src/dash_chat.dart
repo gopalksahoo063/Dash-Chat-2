@@ -63,10 +63,13 @@ class DashChat extends StatelessWidget {
           ),
         ),
         if (!readOnly)
-          InputToolbar(
-            inputOptions: inputOptions,
-            currentUser: currentUser,
-            onSend: onSend,
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 16),
+            child: InputToolbar(
+              inputOptions: inputOptions,
+              currentUser: currentUser,
+              onSend: onSend,
+            ),
           ),
       ],
     );
