@@ -5,7 +5,7 @@ Widget Function(Function send) defaultSendButton({
   required Color color,
   IconData icon = Icons.send,
   EdgeInsets? padding,
-  bool disabled = true,
+  bool disabled = false,
 }) =>
     (Function fct) => InkWell(
           onTap: disabled ? null : () => fct(),
