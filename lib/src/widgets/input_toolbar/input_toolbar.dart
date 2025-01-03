@@ -121,7 +121,7 @@ class InputToolbarState extends State<InputToolbar>
                 textController.text.isNotEmpty)
               widget.inputOptions.sendButtonBuilder != null
                   ? widget.inputOptions.sendButtonBuilder!(_sendMessage)
-                  : defaultSendButton(color: Theme.of(context).primaryColor)(
+                  : defaultSendButton()(
                       _sendMessage,
                     ),
             if (widget.inputOptions.trailing != null &&

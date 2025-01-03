@@ -2,8 +2,8 @@ part of '../../../dash_chat_2.dart';
 
 /// {@category Default widgets}
 Widget Function(Function send) defaultSendButton({
-  required Color color,
-  IconData icon = Icons.arrow_circle_right,
+  // required Color color,
+  // IconData icon = Icons.arrow_circle_right,
   EdgeInsets? padding,
   bool disabled = false,
 }) =>
@@ -12,7 +12,7 @@ Widget Function(Function send) defaultSendButton({
           child: Padding(
             padding: padding ??
                 const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-            child: Icon(
+            child: const Icon(
               Icons.arrow_circle_right,
               color: Colors.black,
             ),
