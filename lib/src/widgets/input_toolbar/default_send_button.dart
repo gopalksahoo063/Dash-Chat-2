@@ -3,7 +3,7 @@ part of '../../../dash_chat_2.dart';
 /// {@category Default widgets}
 Widget Function(Function send) defaultSendButton({
   required Color color,
-  IconData icon = Icons.send,
+  IconData icon = Icons.arrow_circle_right,
   EdgeInsets? padding,
   bool disabled = false,
 }) =>
