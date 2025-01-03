@@ -66,7 +66,7 @@ class DashChat extends StatelessWidget {
           Container(
             color: Colors.white,
             margin: const EdgeInsets.only(top: 5),
-            padding: const EdgeInsets.only(left: 16,top: 5,bottom: 16),
+            padding: const EdgeInsets.only(left: 16,bottom: 16),
             child: InputToolbar(
               inputOptions: inputOptions,
               currentUser: currentUser,
