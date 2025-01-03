@@ -17,7 +17,9 @@ InputDecoration defaultInputDecoration({
         top: 10,
         bottom: 10,
       ),
+      
       border: OutlineInputBorder(
+        
         borderRadius: BorderRadius.circular(10),
         borderSide: const BorderSide(
           width: 0,
